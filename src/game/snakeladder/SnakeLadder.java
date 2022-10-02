@@ -8,9 +8,13 @@ public class SnakeLadder {
 		Random r = new Random();
 		System.out.println("Welcome to snake ladder program.");
 		int userPosition = 0;
+		int count = 0;
 		System.out.println("----Game Starts----");
 		System.out.println("Initial position of user: "+userPosition);
 		
+		while(userPosition != 100)
+		{
+			count++;
 		int dice = r.nextInt(6) + 1 ;
 		System.out.println("Dice Rolled: "+dice);
 		
@@ -27,11 +31,13 @@ public class SnakeLadder {
 				userPosition = userPosition - dice;
 				
 				if(userPosition<0)
-				{ userPosition = 0; 
+				{ 
+					userPosition = 0; 
 				}
 		}
-		System.out.println("Presnt Position of the User: "+userPosition);	
-		
+		System.out.println("Presnt Position of the User: "+userPosition);
+		}
+		System.out.println("User has rolled "+count+" times to win!")
 	}
 
 }
